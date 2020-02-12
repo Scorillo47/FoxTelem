@@ -66,6 +66,7 @@ public class FoxSpacecraft extends Spacecraft{
 	public static final int EXP_VANDERBILT_LEPF = 8; // This is the controller and does not have its own telem file
 	public static final int EXP_UW = 9; // University of Washington
 	public static final int ADAC = 10; // Ragnaroc
+	public static final int EXP_Q2S_RAHS_CAMERA = 11; // Quick2space RAHS camera 
 	
 	public static final String SAFE_MODE_IND = "SafeModeIndication";
 	public static final String SCIENCE_MODE_IND = "ScienceModeActive";
@@ -103,7 +104,8 @@ public class FoxSpacecraft extends Spacecraft{
 		"Vanderbilt REM",
 		"Vanderbilt LEPF",
 		"University of Washington Experiment",
-		"ADAC"
+		"ADAC",
+		"UW Quick2space RAHS Camera"
 	};
 	
 	
@@ -457,6 +459,7 @@ public class FoxSpacecraft extends Spacecraft{
 		for (int i=0; i< experiments.length; i++) {
 			if (experiments[i] == EXP_VT_CAMERA) return true;
 			if (experiments[i] == EXP_VT_CAMERA_LOW_RES) return true;
+			if (experiments[i] == EXP_Q2S_RAHS_CAMERA) return true;
 		}
 		return false;
 	}
@@ -464,6 +467,7 @@ public class FoxSpacecraft extends Spacecraft{
 	public boolean hasLowResCamera() {
 		for (int i=0; i< experiments.length; i++) {
 			if (experiments[i] == EXP_VT_CAMERA_LOW_RES) return true;
+			if (experiments[i] == EXP_Q2S_RAHS_CAMERA) return true;
 		}
 		return false;
 	}

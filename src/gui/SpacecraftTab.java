@@ -172,13 +172,21 @@ public class SpacecraftTab extends JPanel {
 					Log.errorDialog("Layout Failure", "Failed to setup IOWA HERCI tabs for sat: " + sat.user_display_name 
 							+ "\nCheck the Spacecraft.dat file and remove this experiement if it is not valid");
 				}
-
 			}
+
 			if (exp == FoxSpacecraft.EXP_UW)
 				try {
 					addUwExperimentTab((FoxSpacecraft)sat);
 				} catch (Exception e) {
 					Log.errorDialog("Layout Failure", "Failed to setup UW Experiement tab for sat: " + sat.user_display_name 
+							+ "\nCheck the Spacecraft.dat file and remove this experiement if it is not valid");
+				}
+
+			if (exp == FoxSpacecraft.EXP_Q2S_RAHS_CAMERA)
+				try {
+					addCameraTab((FoxSpacecraft)sat);
+				} catch (Exception e) {
+					Log.errorDialog("Layout Failure", "Failed to setup Camera tab for sat: " + sat.user_display_name 
 							+ "\nCheck the Spacecraft.dat file and remove this experiement if it is not valid");
 				}
 //			if (exp == FoxSpacecraft.ADAC)

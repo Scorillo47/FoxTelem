@@ -136,7 +136,12 @@ public class CameraTab extends FoxTelemTab implements Runnable, MouseListener, I
 		fox = sat;
 		foxId = fox.foxId;
 		loadProperties();
-		NAME = fox.toString() + " Virginia Tech Camera";
+		for (int exp : sat.experiments) {
+			if (exp == FoxSpacecraft.EXP_VT_CAMERA || exp == FoxSpacecraft.EXP_VT_CAMERA_LOW_RES)
+				NAME = fox.toString() + " Virginia Tech Camera";
+			if (exp == FoxSpacecraft.EXP_Q2S_RAHS_CAMERA)
+				NAME = fox.toString() + " Quick2space RAHS Camera";
+		}
 		splitPaneHeight = Config.loadGraphIntValue(fox.getIdString(), GraphFrame.SAVED_PLOT, FoxFramePart.TYPE_CAMERA_DATA, CAMERATAB, "splitPaneHeight");
 		
 		setLayout(new BorderLayout(0, 0));
